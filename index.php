@@ -1,21 +1,60 @@
 <?php
-require_once 'Cliente.php';
-require_once 'config.php';
+    require_once 'menu.php';
+    require_once 'Cliente.php';
+    require_once 'config.php';
 
-$clientes = preencheArray();
-echo "NORMAL: <br>";
-print_r($clientes);
+    $clientes = preencheArray();
+?>
 
-echo "<br><br>";
+<div class="container principal">
+<div class="col-md-offset-2 col-md-8">
 
-krsort($clientes);
+<table class="table">
+    <thead>
+    <tr>
+        <td colspan="2" class="text-center">
+            <a href="?crescente=true" class="btn btn-primary" name="enviar"
+                <?php if (!isset($_GET['decrescente'])) echo "disabled" ?>>Ordem Crescente</a>
+            <a href="?decrescente=true" class="btn btn-warning"
+                <?php if (isset($_GET['decrescente'])) echo "disabled" ?>>Ordem Descrescente</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="col-md-6">Nome</td>
+        <td  class="col-md-2">Ação</td>
+    </tr>
+    </thead>
+    <tbody>
 
-echo "Decrescente: <br>";
-print_r($clientes);
+<?php
+    if (!isset($_GET['decrescente'])){
+        ksort($clientes);
+        $ordem = "&crescente=true";
+    } elseif (isset($_GET['decrescente'])){
+        krsort($clientes);
+        $ordem = "&decrescente=true";
+    }
+    $i = 0;
+    foreach ($clientes as $cliente){
+        echo "<tr>";
 
-echo "<br><br>";
+        if (isset($_GET['id']) && $_GET['id']==$i){
+            echo "<td>";
+            $cliente->toString();
+            echo "</td>";
+            echo '<td><a class="btn btn-primary" href="?id=-1'.$ordem.'">'."Esconder</a>";
+        } else {
+            echo "<td>".$cliente->getNome()."</td>";
+            echo '<td><a class="btn btn-primary" href="?id='.$i.$ordem.'">'."Detalhes</a>";
+        }
 
-$i = 0;
-foreach ($clientes as $cliente ){
-    echo $cliente->getNome()."<br>";
-}
+        echo "</tr>";
+        $i++;
+    }
+?>
+</table>
+</div>
+</div>
+<?php
+    require_once 'footer.php';
+?>

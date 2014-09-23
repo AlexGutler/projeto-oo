@@ -147,5 +147,19 @@ class Cliente
         return $this->rg;
     }
 
+    public function toString(){
+        echo "NOME: ".$this->getNome()."<br>";
+        echo "CPF: ".$this->getCpf()."<br>";
+        echo "RG: ".$this->getRg()."<br>";
+        echo "DT. NASC: ".$this->getDataNascimento()."<br>";
+        echo "EMAIL: ".$this->getEmail()."<br>";
+        echo "CELULAR: ".$this->getCelular()."<br>";
+        echo "FIXO: ".$this->getFixo()."<br>";
+        echo "ENDERECO: ".$this->getEndereco()."<br>";
+        echo "UF: ".$this->getEstado()."<br>";
+        echo "CEP: ".$this->getCep()."<br>";
+        echo "CIDADE: ".$this->getCidade()."<br>";
+        echo "BAIRRO: ".$this->getBairro()."<br>";
+    }
 
 } 
