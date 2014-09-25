@@ -1,5 +1,5 @@
 <?php
-require_once 'Cliente.php';
+require_once 'ClienteAbstract.php';
 
 //function preencheArray(){
 //    $clientes = array();

@@ -1,6 +1,6 @@
 <?php
     require_once 'menu.php';
-    require_once 'Cliente.php';
+    require_once 'ClienteAbstract.php';
     require_once 'config.php';
 
     $clientes = preencheArray();
