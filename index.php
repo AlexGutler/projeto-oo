@@ -1,6 +1,5 @@
 <?php
     require_once 'menu.php';
-    require_once 'ClienteAbstract.php';
     require_once 'config.php';
 
     $clientes = preencheArray();
@@ -21,6 +20,7 @@
     </tr>
     <tr>
         <td class="col-md-6">Nome</td>
+        <td class="col-md-6">Tipo Pessoa</td>
         <td  class="col-md-2">Ação</td>
     </tr>
     </thead>
@@ -42,9 +42,19 @@
             echo "<td>";
             $cliente->toString();
             echo "</td>";
+            if ($cliente instanceof AG\Cliente\Types\ClienteFisica){
+                echo "<td>Pessoa Física</td>";
+            } elseif ($cliente instanceof AG\Cliente\Types\ClienteJuridica) {
+                echo "<td>Pessoa Jurídica</td>";
+            }
             echo '<td><a class="btn btn-primary" href="?id=-1'.$ordem.'">'."Esconder</a>";
         } else {
             echo "<td>".$cliente->getNome()."</td>";
+            if ($cliente instanceof AG\Cliente\Types\ClienteFisica){
+                echo "<td>Pessoa Física</td>";
+            } elseif ($cliente instanceof AG\Cliente\Types\ClienteJuridica) {
+                echo "<td>Pessoa Jurídica</td>";
+            }
             echo '<td><a class="btn btn-primary" href="?id='.$i.$ordem.'">'."Detalhes</a>";
         }
 

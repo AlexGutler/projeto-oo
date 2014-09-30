@@ -6,6 +6,30 @@ abstract class ClienteAbstract
     private $email;
     private $telefone;
     private $endereco;
+    private $endereco_cobranca;
+    private $importancia;
+
+    public function setEnderecoCobranca($endereco_cobranca)
+    {
+        $this->endereco_cobranca = $endereco_cobranca;
+        return $this;
+    }
+
+    public function getEnderecoCobranca()
+    {
+        return $this->endereco_cobranca;
+    }
+
+    public function setImportancia($importancia)
+    {
+        $this->importancia = $importancia;
+        return $this;
+    }
+
+    public function getImportancia()
+    {
+        return $this->importancia;
+    }
 
     public function setEmail($email)
     {
@@ -55,7 +79,13 @@ abstract class ClienteAbstract
         echo "NOME: ".$this->getNome()."<br>";
         echo "EMAIL: ".$this->getEmail()."<br>";
         echo "TELEFONE: ".$this->getTelefone()."<br>";
-        echo "ENDERECO: ".$this->getEndereco()."<br>";
+        echo "ENDEREÇO: ".$this->getEndereco()."<br>";
+        if (strlen($this->getEnderecoCobranca()) > 10){
+            echo "ENDEREÇO COBRANÇA: ".$this->getEnderecoCobranca()."<br>";
+        }
+        if (strlen($this->getImportancia()) > 0){
+            echo "IMPORTANCIA: ".$this->getImportancia()."<br>";
+        }
     }
 
 } 
