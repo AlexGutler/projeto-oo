@@ -1,12 +1,8 @@
 <?php
-    define('CLASS_DIR','src/');
-    set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
-    spl_autoload_register();
-
     require_once 'menu.php';
-    //require_once 'config.php';
+    require_once 'src/AG/Cliente/Utils/config.php';
 
-    $clientes = AG\Cliente\Utils\preencheArray();
+    $clientes = preencheArray();
 ?>
 
 <div class="container principal">

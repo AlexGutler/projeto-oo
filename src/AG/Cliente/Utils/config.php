@@ -1,18 +1,13 @@
 <?php
-namespace AG\Cliente\Utils;
-
-//define('CLASS_DIR','src/');
-//set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
-//spl_autoload_register();
-
-use AG\Cliente\Types\ClienteFisica;
-use AG\Cliente\Types\ClienteJuridica;
+define('CLASS_DIR','src/');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_register();
 
 function preencheArray()
 {
     $clientes = array();
 
-    $objeto = new ClienteFisica();
+    $objeto = new AG\Cliente\Types\ClienteFisica();
     $objeto
         ->setNome("Alex Gutler")
         ->setCpf("158.788.965-01")
@@ -26,7 +21,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteFisica();
+    $objeto = new AG\Cliente\Types\ClienteFisica();
     $objeto
         ->setNome("Renan Gutler")
         ->setCpf("135.566.874-09")
@@ -40,7 +35,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteJuridica();
+    $objeto = new AG\Cliente\Types\ClienteJuridica();
     $objeto
         ->setNome("Henrique Gutler")
         ->setCnpj("80.686.455/0001-41")
@@ -54,7 +49,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteJuridica();
+    $objeto = new AG\Cliente\Types\ClienteJuridica();
     $objeto
         ->setNome("Adeumar Gutler")
         ->setCnpj("88.492.528/0001-76")
@@ -68,7 +63,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteFisica();
+    $objeto = new AG\Cliente\Types\ClienteFisica();
     $objeto
         ->setNome("Neuza Hoffmann")
         ->setCpf("132.456.789-09")
@@ -81,7 +76,7 @@ function preencheArray()
     $objeto->defineImportancia(4);
     $clientes[] = $objeto;
 
-    $objeto = new ClienteJuridica();
+    $objeto = new AG\Cliente\Types\ClienteJuridica();
     $objeto
         ->setNome("Antonio Carlos")
         ->setCnpj("49.970.361/0001-50")
@@ -95,7 +90,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteJuridica();
+    $objeto = new AG\Cliente\Types\ClienteJuridica();
     $objeto
         ->setNome("Tiago Oliveira")
         ->setCnpj("22.112.289/0001-73")
@@ -109,7 +104,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteFisica();
+    $objeto = new AG\Cliente\Types\ClienteFisica();
     $objeto
         ->setNome("Maria José")
         ->setCpf("13545526708")
@@ -123,7 +118,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteFisica();
+    $objeto = new AG\Cliente\Types\ClienteFisica();
     $objeto
         ->setNome("Simone Sousa")
         ->setCpf("14535528907")
@@ -137,7 +132,7 @@ function preencheArray()
 
     $clientes[] = $objeto;
 
-    $objeto = new ClienteJuridica();
+    $objeto = new AG\Cliente\Types\ClienteJuridica();
     $objeto
         ->setNome("Marina Mara")
         ->setCnpj("32.169.581/0001-86")
